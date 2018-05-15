@@ -1,13 +1,32 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <title>Simple Game</title>
 </head>
 
 <body>
-    <p>Below is a button.</p>
-    <button>x</button>
+    <p>Below are some buttons.</p>
+    <button id="1" onclick="clicked(this.id)">x</button>
+    <button id="2" onclick="clicked(this.id)">x</button>
+    <button id="3" onclick="clicked(this.id)">x</button>
+    <button id="4" onclick="clicked(this.id)">x</button>
+    <br />
+    <button id="5" onclick="clicked(this.id)">x</button>
+    <button id="6" onclick="clicked(this.id)">x</button>
+    <button id="7" onclick="clicked(this.id)">x</button>
+    <button id="8" onclick="clicked(this.id)">x</button>
+    <br />
+    <button id="9" onclick="clicked(this.id)">x</button>
+    <button id="10" onclick="clicked(this.id)">x</button>
+    <button id="11" onclick="clicked(this.id)">x</button>
+    <button id="12" onclick="clicked(this.id)">x</button>
 </body>
+
+<script>
+    function clicked(id) {
+        document.getElementById(id).innerHTML = "You clicked me!";
+    }
+</script>
 
 </html>
