@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
     <title>Simple Game</title>
 </head>
 
@@ -21,11 +22,19 @@
     <button id="10" onclick="clicked(this.id)">x</button>
     <button id="11" onclick="clicked(this.id)">x</button>
     <button id="12" onclick="clicked(this.id)">x</button>
+    <br />
+    <button id="13" onclick="clicked(this.id)">x</button>
+    <button id="14" onclick="clicked(this.id)">x</button>
+    <button id="15" onclick="clicked(this.id)">x</button>
+    <button id="16" onclick="clicked(this.id)">x</button>
 </body>
 
 <script>
     function clicked(id) {
-        document.getElementById(id).innerHTML = "You clicked me!";
+        if (document.getElementById(id).innerHTML == "x")
+            document.getElementById(id).innerHTML = "o";
+        else
+            document.getElementById(id).innerHTML = "x";
     }
 </script>
 
