@@ -48,13 +48,13 @@
             document.getElementById(id).innerHTML = "X";
     }
     function reset() {
-        for (i = 1; i < 17; i++) {
+        for (i = 0; i < 16; i++) {
             document.getElementById(i).innerHTML = "X";
             document.getElementById("reset").innerHTML = "Start Again!";
         }
     }
     function isSuccessful() {
-        for (i = 1; i < 17; i++) {
+        for (i = 0; i < 16; i++) {
             if (document.getElementById(i).innerHTML == "X")
                 return false;
         }
