@@ -7,34 +7,58 @@
 </head>
 
 <body>
-    <p>Below are some buttons.</p>
-    <button id="1" onclick="clicked(this.id)">x</button>
-    <button id="2" onclick="clicked(this.id)">x</button>
-    <button id="3" onclick="clicked(this.id)">x</button>
-    <button id="4" onclick="clicked(this.id)">x</button>
+    <h2>Eliminate all X's!</h2>
+    <button id="1" onclick="clicked(this.id)">X</button>
+    <button id="2" onclick="clicked(this.id)">X</button>
+    <button id="3" onclick="clicked(this.id)">X</button>
+    <button id="4" onclick="clicked(this.id)">X</button>
     <br />
-    <button id="5" onclick="clicked(this.id)">x</button>
-    <button id="6" onclick="clicked(this.id)">x</button>
-    <button id="7" onclick="clicked(this.id)">x</button>
-    <button id="8" onclick="clicked(this.id)">x</button>
+    <button id="5" onclick="clicked(this.id)">X</button>
+    <button id="6" onclick="clicked(this.id)">X</button>
+    <button id="7" onclick="clicked(this.id)">X</button>
+    <button id="8" onclick="clicked(this.id)">X</button>
     <br />
-    <button id="9" onclick="clicked(this.id)">x</button>
-    <button id="10" onclick="clicked(this.id)">x</button>
-    <button id="11" onclick="clicked(this.id)">x</button>
-    <button id="12" onclick="clicked(this.id)">x</button>
+    <button id="9" onclick="clicked(this.id)">X</button>
+    <button id="10" onclick="clicked(this.id)">X</button>
+    <button id="11" onclick="clicked(this.id)">X</button>
+    <button id="12" onclick="clicked(this.id)">X</button>
     <br />
-    <button id="13" onclick="clicked(this.id)">x</button>
-    <button id="14" onclick="clicked(this.id)">x</button>
-    <button id="15" onclick="clicked(this.id)">x</button>
-    <button id="16" onclick="clicked(this.id)">x</button>
+    <button id="13" onclick="clicked(this.id)">X</button>
+    <button id="14" onclick="clicked(this.id)">X</button>
+    <button id="15" onclick="clicked(this.id)">X</button>
+    <button id="0" onclick="clicked(this.id)">X</button>
+    <br />
+    <br />
+    <button id="reset" onclick="reset()">Start Again!</button>
 </body>
 
 <script>
     function clicked(id) {
-        if (document.getElementById(id).innerHTML == "x")
-            document.getElementById(id).innerHTML = "o";
+        for (i = Number(id); i < Number(id) + 6; i+=2) {
+            let num = i % 16;
+            flipIt(num);
+        }
+        if (isSuccessful())
+            document.getElementById("reset").innerHTML = "Congratulations! You finished the game successfully!";
+    }
+    function flipIt(id) {
+        if (document.getElementById(id).innerHTML == "X")
+            document.getElementById(id).innerHTML = "O";
         else
-            document.getElementById(id).innerHTML = "x";
+            document.getElementById(id).innerHTML = "X";
+    }
+    function reset() {
+        for (i = 1; i < 17; i++) {
+            document.getElementById(i).innerHTML = "X";
+            document.getElementById("reset").innerHTML = "Start Again!";
+        }
+    }
+    function isSuccessful() {
+        for (i = 1; i < 17; i++) {
+            if (document.getElementById(i).innerHTML == "X")
+                return false;
+        }
+        return true;
     }
 </script>
 
