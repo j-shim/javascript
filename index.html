@@ -1,11 +1,17 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Simple Game</title>
+    <style>
+        button {
+            background-color: Tomato;
+            font-size: 40px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
-
 <body>
     <h2>Eliminate all X's!</h2>
     <button id="0" onclick="clicked(this.id)">X</button>
@@ -30,36 +36,35 @@
     <br />
     <br />
     <button id="reset" onclick="reset()">Start Again!</button>
+
+    <script>
+        function clicked(id) {
+            for (i = Number(id); i < Number(id) + 6; i+=2) {
+                let num = i % 16;
+                flipIt(num);
+            }
+            if (isSuccessful())
+                document.getElementById("reset").innerHTML = "Congratulations! You finished the game successfully!";
+        }
+        function flipIt(id) {
+            if (document.getElementById(id).innerHTML == "X")
+                document.getElementById(id).innerHTML = "O";
+            else
+                document.getElementById(id).innerHTML = "X";
+        }
+        function reset() {
+            for (i = 0; i < 16; i++) {
+                document.getElementById(i).innerHTML = "X";
+                document.getElementById("reset").innerHTML = "Start Again!";
+            }
+        }
+        function isSuccessful() {
+            for (i = 0; i < 16; i++) {
+                if (document.getElementById(i).innerHTML == "X")
+                    return false;
+            }
+            return true;
+        }
+    </script>
 </body>
-
-<script>
-    function clicked(id) {
-        for (i = Number(id); i < Number(id) + 6; i+=2) {
-            let num = i % 16;
-            flipIt(num);
-        }
-        if (isSuccessful())
-            document.getElementById("reset").innerHTML = "Congratulations! You finished the game successfully!";
-    }
-    function flipIt(id) {
-        if (document.getElementById(id).innerHTML == "X")
-            document.getElementById(id).innerHTML = "O";
-        else
-            document.getElementById(id).innerHTML = "X";
-    }
-    function reset() {
-        for (i = 0; i < 16; i++) {
-            document.getElementById(i).innerHTML = "X";
-            document.getElementById("reset").innerHTML = "Start Again!";
-        }
-    }
-    function isSuccessful() {
-        for (i = 0; i < 16; i++) {
-            if (document.getElementById(i).innerHTML == "X")
-                return false;
-        }
-        return true;
-    }
-</script>
-
 </html>
