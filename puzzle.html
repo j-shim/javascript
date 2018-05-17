@@ -8,15 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <style>
-      button {
-        background-color: MediumSeaGreen;
-        color: white;
-        width: 80px;
-        height: 80px;
-      }
-    </style>
- </head>
+  </head>
   <body>
     <div class="jumbotron">
       <div class="container">
@@ -24,33 +16,33 @@
         <p class="text-primary">Click a button to flip it and other adjacent ones</p>
       </div>
       <div class="row">
-        <button id="0" onclick="clicked(this.id)">X</button>
-        <button id="1" onclick="clicked(this.id)">X</button>
-        <button id="2" onclick="clicked(this.id)">X</button>
-        <button id="3" onclick="clicked(this.id)">X</button>
+        <button id="0" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="1" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="2" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="3" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
       </div>
       <div class="row">
-        <button id="4" onclick="clicked(this.id)">X</button>
-        <button id="5" onclick="clicked(this.id)">X</button>
-        <button id="6" onclick="clicked(this.id)">X</button>
-        <button id="7" onclick="clicked(this.id)">X</button>
+        <button id="4" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="5" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="6" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="7" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
       </div>
       <div class="row">
-        <button id="8" onclick="clicked(this.id)">X</button>
-        <button id="9" onclick="clicked(this.id)">X</button>
-        <button id="10" onclick="clicked(this.id)">X</button>
-        <button id="11" onclick="clicked(this.id)">X</button>
+        <button id="8" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="9" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="10" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="11" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
       </div>
       <div class="row">
-        <button id="12" onclick="clicked(this.id)">X</button>
-        <button id="13" onclick="clicked(this.id)">X</button>
-        <button id="14" onclick="clicked(this.id)">X</button>
-        <button id="15" onclick="clicked(this.id)">X</button>
+        <button id="12" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="13" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="14" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
+        <button id="15" type="button" class="btn btn-outline-primary" onclick="clicked(this.id)">X</button>
       </div>
       <div id="done" class="alert alert-success">
       </div>
       <div class="row">
-        <button id="reset" onclick="reset()">Start Again!</button>
+        <button id="reset" type="button" class="btn btn-outline-primary" onclick="reset()">Start Again!</button>
       </div>
     </div>
 
