@@ -12,16 +12,16 @@
       button {
         background-color: MediumSeaGreen;
         color: white;
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
       }
     </style>
  </head>
   <body>
-    <div class="container">
+    <div class="jumbotron">
       <div class="container">
         <h2>Eliminate all X's!</h2>
-        <p>Click a button to flip it and other adjacent ones</p>
+        <p class="text-primary">Click a button to flip it and other adjacent ones</p>
       </div>
       <div class="row">
         <button id="0" onclick="clicked(this.id)">X</button>
@@ -47,7 +47,8 @@
         <button id="14" onclick="clicked(this.id)">X</button>
         <button id="15" onclick="clicked(this.id)">X</button>
       </div>
-      <br />
+      <div id="done" class="alert alert-success">
+      </div>
       <div class="row">
         <button id="reset" onclick="reset()">Start Again!</button>
       </div>
@@ -71,7 +72,7 @@
           }
         }
         if (isSuccessful())
-          document.getElementById("reset").innerHTML = "Congratulations! You finished the game successfully!";
+          document.getElementById("done").innerHTML = "Congratulations! You finished the game successfully!";
       }
       function flipIt(id) {
         if (document.getElementById(id).innerHTML == "X")
@@ -82,8 +83,9 @@
       function reset() {
         for (i = 0; i < dimByDim; i++) {
           document.getElementById(i).innerHTML = "X";
-          document.getElementById("reset").innerHTML = "Start Again!";
         }
+        document.getElementById("reset").innerHTML = "Start Again!";
+        document.getElementById("done").innerHTML = "<br />";
       }
       function isSuccessful() {
         for (i = 0; i < dimByDim; i++) {
