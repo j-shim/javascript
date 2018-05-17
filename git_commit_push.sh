@@ -9,6 +9,6 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 if [ $# -eq 1 ]; then
-  echo "Executing git commit -ma \"$1\"..."
-  git commit -ma $1
+  echo "Executing git with commit message \"$1\" ..."
+  git commit -a -m "$1"
 fi
