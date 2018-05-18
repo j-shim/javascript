@@ -8,5 +8,5 @@ puzzle.html (open with your favorite browser)
 git_commit_push.sh
 - Bash script for git add, commit and push with commit message
 - Run $ ./git_commit_push.sh with no argument to read usage
-- or  $ ./git_commit_push.sh "<commit message>" to stage current folder
-- or  $ ./git_commit_push.sh "<commit message>" <file1> <file2> <file3> ...
+- or  $ ./git_commit_push.sh "commit message" to stage current folder
+- or  $ ./git_commit_push.sh "commit message" file1 file2 file3 ...
