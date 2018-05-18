@@ -11,9 +11,18 @@ fi
 if [ $# -eq 1 ]; then
   echo "------> Executing \$ git add ./ ..."
   git add .
-  echo "------> Executing \$ git commit -m \"$1\" ..."
-  git commit -m "$1"
-  echo "------> Executing \$ git push ..."
-  git push
-  echo "------> Successful. Exiting..."
+else # File input is given
+  for filename in "$@"; do
+    if [ "$filename" = "$1" ]; then
+      continue
+    fi
+    echo "------> Executing \$ git add $filename ..."
+    git add "$filename" 
+  done
 fi
+echo "------> Executing \$ git commit -m \"$1\" ..."
+git commit -m "$1"
+echo "------> Executing \$ git push ..."
+git push
+echo "------> Successful. Exiting..."
+exit 0
