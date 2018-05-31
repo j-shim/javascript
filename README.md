@@ -1,4 +1,5 @@
-# Various Personal Projects for Summer 2018 (javascript, Bash script, etc)
+# Various Personal Projects for Summer 2018 
+# (javascript, Bash script, etc)
 
 puzzle.html (open a Web browser)
 - 4x4 simple puzzle
