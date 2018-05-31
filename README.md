@@ -1,6 +1,6 @@
-# Javascript (and some other scripts)
+# Various Personal Projects for Summer 2018 (javascript, Bash script, etc)
 
-puzzle.html (open with your favorite browser)
+puzzle.html (open a Web browser)
 - 4x4 simple puzzle
 - Flip all X's into O's!
 - Click one of the buttons to flip it AND any adjacent ones!
