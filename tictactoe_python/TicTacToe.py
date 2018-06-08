@@ -13,25 +13,25 @@ class TicTacToe:
         if this.board[x][y] == "*":
             this.board[x][y] = player
             this.turn += 1
-            return "true"
+            return True
         else:
             print("You can't draw in that box!")
-            return "false"
+            return False
 
     def hasAWinner(this):
         for x in range(3):
-            if this.checkRowColDiag("row", x, "O") == "true":
+            if this.checkRowColDiag("row", x, "O") == True:
                 return "O"
-            if this.checkRowColDiag("row", x, "X") == "true":
+            if this.checkRowColDiag("row", x, "X") == True:
                 return "X"
-            if this.checkRowColDiag("col", x, "O") == "true":
+            if this.checkRowColDiag("col", x, "O") == True:
                 return "O"
-            if this.checkRowColDiag("col", x, "X") == "true":
+            if this.checkRowColDiag("col", x, "X") == True:
                 return "X"
         for x in range(2):
-            if this.checkRowColDiag("diag", x, "O") == "true":
+            if this.checkRowColDiag("diag", x, "O") == True:
                 return "O"
-            if this.checkRowColDiag("diag", x, "X") == "true":
+            if this.checkRowColDiag("diag", x, "X") == True:
                 return "X"
         if this.turn == 8:
             return "tie"
@@ -41,30 +41,33 @@ class TicTacToe:
     def checkRowColDiag(this, spec, num, player):
         if spec == "row":
             for x in range(3):
-                if this.board[num][x] != player: return "false"
-            return "true"
+                if this.board[num][x] != player: return False
+            return True
         elif spec == "col":
             for x in range(3):
-                if this.board[x][num] != player: return "false"
-            return "true"
+                if this.board[x][num] != player: return False
+            return True
         elif spec == "diag" and num == 0:
             for x in range(3):
-                if this.board[x][x] != player: return "false"
-            return "true"
+                if this.board[x][x] != player: return False
+            return True
         elif spec == "diag" and num == 1:
             for x in range(3):
-                if this.board[2 - x][x] != player: return "false"
-            return "true"
+                if this.board[2 - x][x] != player: return False
+            return True
         else:
             print("Row, column or diagonal Not Specified")
-            return "false"
+            return False
 
     def print(this):
-        print("---------------")
+        i = 1
+        print("-----------------------------")
         for x in this.board:
-            tmpStr = "|    "
+            tmpStr = "|    " + str(i) + " " + str(i + 1) + " " + str(i + 2)
+            tmpStr = tmpStr + "    |    "
             for y in x:
                 tmpStr = tmpStr + y + " "
             tmpStr += "   |"
             print(tmpStr)
-        print("---------------")
+            i += 3
+        print("-----------------------------")
